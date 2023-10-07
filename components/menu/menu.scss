@@ -1,0 +1,61 @@
+.footer-menu {
+    display: flex;
+    max-width: 700px; /* Độ rộng tối đa của menu */
+    margin: 0 auto; /* Căn giữa menu trên màn hình */
+    background-color: #333; /* Màu nền của menu */
+    color: #fff; /* Màu chữ trắng */
+    // padding: 10px 20px; /* Khoảng cách giữa các mục menu */
+    position: fixed; /* Để menu nằm ở đáy màn hình */
+    bottom: 0; /* Đặt ở đáy màn hình */
+    left: 0; /* Đặt ở góc trái */
+    right: 0; /* Đặt ở góc phải */
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  
+  /* CSS cho các mục menu */
+  .footer-menu-item {
+    flex: 1; /* Chia đều không gian cho các mục */
+    display: flex;
+    text-align: center; /* Canh giữa nội dung của mục */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+    cursor: pointer;
+    .menu-icon{
+      font-size: 30px;
+    }
+    .menu-notification{
+      color: red;
+      position: absolute;
+      top: 3px;
+      right: 35%;
+      font-size: 20px;
+      width: 15px; /* Đặt chiều rộng của hình tròn */
+      height: 15px; /* Đặt chiều cao của hình tròn, giống chiều rộng để tạo hình tròn */
+      background-color: red; /* Đặt màu nền là đỏ */
+      border-radius: 50%; /* Thiết lập bán kính của viền để tạo hình tròn */
+      animation: pulse 1s infinite;
+    }
+  }
+
+  .footer-menu-item:hover{
+    background-color: black;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
