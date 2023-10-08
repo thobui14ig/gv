@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
       <body className={inter.className}>
-        <main>
+        <main className="h-screen overflow-y-auto">
           <Menu/>
           {children}          
         </main>

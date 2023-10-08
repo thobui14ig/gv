@@ -18,11 +18,11 @@ function Menu() {
         <div className="footer-menu-item" onClick={() => router.push('danh-sach-don-hang')}>
           <span className='menu-notification'></span>
           <ShoppingCartOutlined className='menu-icon'/>
-          <span>Đơn mới</span>
+          <span>Đơn hàng</span>
         </div>
         <div className="footer-menu-item" onClick={() => router.push('tai-khoan')}>
           <UserOutlined className='menu-icon'/>
-          <span>Đơn mới</span>
+          <span>Tài khoản</span>
 
         </div>
     </div>
