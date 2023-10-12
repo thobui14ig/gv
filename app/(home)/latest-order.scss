@@ -24,6 +24,12 @@
             display: flex;
             justify-content: center;
         }
+        .is-new{
+            color: red;
+        }
+        .is-old{
+            color: black;
+        }
     }
     .new{
         animation: changeColor 3s linear forwards;

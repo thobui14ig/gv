@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import './latest-order.scss'
 import { Button } from 'antd';
 import { Socket } from '../socket/socket';
+import dayjs from 'dayjs';
+import timeAgo from '@/lib/time/time-ago';
 
 
 function LatestOrders() {
@@ -52,7 +54,7 @@ function LatestOrders() {
         var dateB = new Date(b.created_time).getTime();
         return dateB - dateA;
     }).slice(0, 20);
-
+    const a = dayjs(new Date())
 
     return combinedArray
   }
@@ -62,8 +64,8 @@ function LatestOrders() {
       {posts?.length > 0 && posts?.map((post: any, i: number) => {
           return (
           <div key={i} className={`latest-order-item ${post?.isNew ? 'new' : 'old'}`}>
-            <span className='name item-m3'>{post?.from?.name}({post?.groupId})</span>
-            <span className='item-m3'>Time: {post?.created_time}</span>
+            <span className='name item-m3'>{post?.from?.name}<span className={`${post?.isNew ? 'is-new' : 'is-old'}`}>({timeAgo(post?.created_time)})</span></span>
+            <span className='item-m3'>GroupId: {post?.groupId}</span>
             <span className='item-m3'>Nội dung: {post?.message}</span>
             <div className='press-order'>
               <Button type="primary">Nhận ngay</Button>
